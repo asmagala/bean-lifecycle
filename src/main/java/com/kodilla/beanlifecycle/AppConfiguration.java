@@ -18,6 +18,11 @@ class AppConfiguration {
     }
 
     @Bean
+    public BeanCreatingMonitor beanCreatingMonitor() {
+        return  new BeanCreatingMonitor();
+    }
+
+    @Bean
     @Scope("prototype")
     public PrototypeBean prototypeBean() {
         return new PrototypeBean();
