@@ -1,5 +1,7 @@
 package com.kodilla.beanlifecycle;
 
-public class BeanCreatingMonitor {
+import org.springframework.beans.factory.config.BeanPostProcessor;
+
+public class BeanCreatingMonitor implements BeanPostProcessor {
 
 }
