@@ -1,6 +1,9 @@
-package com.kodilla.beanlifecycle;
+package com.kodilla.beanlifecycle.controller;
 
 
+import com.kodilla.beanlifecycle.LibraryManager;
+import com.kodilla.beanlifecycle.PrototypeBean;
+import com.kodilla.beanlifecycle.SingletonBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

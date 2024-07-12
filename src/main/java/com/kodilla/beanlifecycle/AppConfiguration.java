@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 class AppConfiguration {
-
+/*
     @Bean
     public LibraryManager libraryManager() {
         return new LibraryManager();
@@ -32,4 +32,6 @@ class AppConfiguration {
     public SingletonBean singletonBean() {
         return new SingletonBean();
     }
+
+ */
 }
