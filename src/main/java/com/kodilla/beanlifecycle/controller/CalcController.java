@@ -9,38 +9,8 @@ import java.math.BigDecimal;
 @RequestMapping("/calc")
 public class CalcController {
 
-    @PostMapping(path = "add")
-    public String addition(@RequestBody CalcDto data) {
-        System.out.println("Dodawanie");
-        System.out.println(data.getFirstNumber());
-        System.out.println(data.getSecondNumber());
-        String sFirstNumber = data.getFirstNumber().toString();
-        String sSecondNumber = data.getSecondNumber().toString();
-        BigDecimal result = data.getFirstNumber().add(data.getSecondNumber());
-        return sFirstNumber + " + " + sSecondNumber + " = " + result.toString();
-    }
-
-    @PostMapping(path = "sub")
-    public String subtraction(@RequestBody CalcDto data) {
-        System.out.println("Odejmowanie");
-        System.out.println(data.getFirstNumber());
-        System.out.println(data.getSecondNumber());
-        return (data.getFirstNumber().subtract(data.getSecondNumber())).toString();
-    }
-
-    @PostMapping(path = "multi")
-    public String multiplication(@RequestBody CalcDto data) {
-        System.out.println("Mnożenie");
-        System.out.println(data.getFirstNumber());
-        System.out.println(data.getSecondNumber());
-        return (data.getFirstNumber().multiply(data.getSecondNumber())).toString();
-    }
-
-    @PostMapping(path = "div")
-    public String division(@RequestBody CalcDto data) {
-        System.out.println("Dzielenie");
-        System.out.println(data.getFirstNumber());
-        System.out.println(data.getSecondNumber());
-        return (data.getFirstNumber().divide(data.getSecondNumber())).toString();
+    @GetMapping("/{op}/{firstNumber}/{secondNumber}")
+    public String calculate(@PathVariable String op, @PathVariable double firstNumber, @PathVariable double secondNumber) {
+        return (new CalcDto(op, firstNumber, secondNumber)).resultString();
     }
 }
