@@ -42,7 +42,7 @@ public class CalcDto {
         return firstNumber / secondNumber;
     }
 
-    public String resultString() {
+    public String resultString(Boolean isLog) {
         String result = "";
         switch(op) {
             case "add":
@@ -57,10 +57,20 @@ public class CalcDto {
             case "div":
                 if (secondNumber != 0) {
                     result = String.valueOf(firstNumber) + " / " + String.valueOf(secondNumber) + " = " + String.valueOf(firstNumber / secondNumber);
-                } else { result = "Do not divide by 0!"; }
+                } else {
+                    if (isLog) {
+                        result = "Invalid operation: op = " + op + "; firstNumber = " + String.valueOf(firstNumber) + "; secondNumber = " + String.valueOf(secondNumber);
+                    } else {
+                        result = "Do not divide by 0!";
+                    }
+                }
                 break;
             default:
-                result = "Invalid operation! <br>Allowed are: <br>add, sub, mul, div";
+                if (isLog) {
+                    result = "Invalid operation: op = " + op + "; firstNumber = " + String.valueOf(firstNumber) + "; secondNumber = " + String.valueOf(secondNumber);
+                } else {
+                    result = "Invalid operation! <br>Allowed are: <br>add, sub, mul, div";
+                }
         }
         return result;
     }
