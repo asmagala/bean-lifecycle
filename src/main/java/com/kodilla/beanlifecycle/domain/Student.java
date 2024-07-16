@@ -6,8 +6,4 @@ public class Student {
     public Student(String indexNumber) {
         this.indexNumber = indexNumber;
     }
-
-    public String getIndexNumber() {
-        return indexNumber;
-    }
 }

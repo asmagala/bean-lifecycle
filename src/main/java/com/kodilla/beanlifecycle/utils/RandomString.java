@@ -3,7 +3,7 @@ package com.kodilla.beanlifecycle.utils;
 import java.util.Random;
 
 public final class RandomString {
-    private static final String CHARACTERS = "abcdefghijklmnopqrstuvwxyz";
+    private static final String CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ()!@#$%^&*";
     private static final Random random = new Random();
     private RandomString() {
         throw new AssertionError("This class cannot be instantiated.");
